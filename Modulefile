@@ -1,5 +1,5 @@
 name    'aboe-pacman'
-version '0.4.0'
+version '0.5.0'
 source 'https://github.com/aboe76/puppet-pacman'
 author 'aboe'
 license 'Apache License, Version 2.0'
