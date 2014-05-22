@@ -1,0 +1,3 @@
+# pacman #
+
+This is the pacman module. It provides...

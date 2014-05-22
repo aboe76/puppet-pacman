@@ -1,0 +1,15 @@
+
+[<%= @name %>]
+<% if @description -%>
+# Description: <%= @description %>
+<% end -%>
+# Order: <%= @order %>
+<%if @siglevel -%>
+SigLevel <%= @siglevel %>
+<% end -%>
+<%if @server -%>
+Server = <%= @server %>
+<% end -%>
+<%if  @include -%>
+Include = <%= @include%>
+<% end -%>
