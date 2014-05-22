@@ -23,7 +23,7 @@ class pacman::params {
       $noextract = undef
       # pacman misc options
       $usesyslog = false
-      $color = true
+      $color = false
       $totaldownload = false
       $checkspace = true
       $verbosepkglist = false

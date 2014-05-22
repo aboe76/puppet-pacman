@@ -68,11 +68,6 @@ class pacman::config (
     order   => 12,
   }
 
-  pacman::repo { 'multilib':
-    include => '/etc/pacman.d/mirrorlist',
-    order   => 13,
-  }
-
   concat::fragment { 'custom':
     target  => $config,
     content => template('pacman/pacman.conf.customrepo.erb'),

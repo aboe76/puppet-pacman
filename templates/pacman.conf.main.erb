@@ -9,56 +9,71 @@
 [options]
 # The following paths are commented out with their default values listed.
 # If you wish to use different paths, uncomment and update the paths.
-#RootDir      = /
-#Rootdir      = <%= @rootdir %>
+#RootDir     = /
+Rootdir      = <%= @rootdir %>
 
-#DBPath       = /var/lib/pacman/
-#DBPath       = <%= @dbpath %>
+#DBPath      = /var/lib/pacman/
+DBPath       = <%= @dbpath %>
 
-#CacheDir     = /var/cache/pacman/pkg/
-#CacheDir     = <%= @cachedir %>
+#CacheDir    = /var/cache/pacman/pkg/
+CacheDir     = <%= @cachedir %>
 
-#LogFile      = /var/log/pacman.log
-#LogFile      = <%= @logfile %>
+#LogFile     = /var/log/pacman.log
+LogFile      = <%= @logfile %>
 
-#GPGDir       = /etc/pacman.d/gnupg/
-#GPGDir       = <%= @gpgdir %>
+#GPGDir      = /etc/pacman.d/gnupg/
+GPGDir       = <%= @gpgdir %>
 
-HoldPkg       = pacman glibc
-#HoldPkg      = <%= @holdpkg %>
+#HoldPkg     = pacman glibc
+HoldPkg      = <%= @holdpkg %>
 
-#XferCommand  = /usr/bin/curl -C - -f %u > %o
-#XferCommand  = <%= @xfercommand %>
-#XferCommand  = /usr/bin/wget --passive-ftp -c -O %o %u
+#XferCommand = /usr/bin/curl -C - -f %u > %o
+#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+XferCommand  = <%= @xfercommand %>
 
-#CleanMethod  = KeepInstalled
-#CleanMethod  = <%= @cleanmethod %>
+#CleanMethod = KeepInstalled
+CleanMethod  = <%= @cleanmethod %>
 
-#UseDelta     = 0.7
-#UseDelta     = <%= @usedelta %>
+#UseDelta    = 0.7
+UseDelta     = <%= @usedelta %>
 
-Architecture  = auto
-#Architecture = <%= @architecture %>
+#Architecture = auto
+Architecture  = <%= @architecture %>
 
 # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
-#IgnorePkg     = 
-#IgnoreGroup  =
+IgnorePkg     = <%= @ignorepkg %> 
+IgnoreGroup  = <%= @ignoregroup %>
 
-#NoUpgrade    =
-#NoExtract    =
+NoUpgrade    = <%= @noupgrade %>
+NoExtract    = <%= @noextract %>
 
 # Misc options
 #UseSyslog
+<% if @usesyslog -%>
+UseSyslog
+<% end -%>
+#color
+<% if @color -%>
 Color
+<% end -%>
 #TotalDownload
+<% if @totaldownload -%>
+TotalDownload
+<% end -%>
+#CheckSpace
+<% if @checkspace -%>
 CheckSpace
+<% end -%>
 #VerbosePkgLists
+<% if @verbosepkglist -%>
+VerbosePkgLists
+<% end -%>
 
 # By default, pacman accepts packages signed by keys that its local keyring
 # trusts (see pacman-key and its man page), as well as unsigned packages.
-SigLevel    = Required DatabaseOptional
-LocalFileSigLevel = Optional
-#RemoteFileSigLevel = Required
+SigLevel    = <%= @mainsiglevel %>
+LocalFileSigLevel = <%= @localfilesiglevel %> 
+RemoteFileSigLevel = <%= @remotefilesiglevel %>
 
 # NOTE: You must run `pacman-key --init` before first using pacman; the local
 # keyring can then be populated with the keys of all official Arch Linux

@@ -101,5 +101,3 @@ class 'pacman::repo': 'custom':
 
 This module has been built on and tested against Puppet 3.6.0 and higher.
 This module works only on archlinux
-
-Not all parameters are in the template available.

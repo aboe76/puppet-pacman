@@ -33,5 +33,5 @@
   "source": "https://github.com/aboe76/puppet-pacman",
   "summary": "This module will configure pacman package manager on Archlinux",
   "types": [],
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
