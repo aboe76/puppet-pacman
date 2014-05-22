@@ -29,8 +29,8 @@
   "description": "",
   "license": "Apache License, Version 2.0",
   "name": "aboe-pacman",
-  "project_page": "",
-  "source": "",
+  "project_page": "https://github.com/aboe76/puppet-pacman",
+  "source": "https://github.com/aboe76/puppet-pacman",
   "summary": "This module will configure pacman package manager on Archlinux",
   "types": [],
   "version": "0.3.0"

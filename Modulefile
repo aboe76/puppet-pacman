@@ -1,11 +1,11 @@
 name    'aboe-pacman'
 version '0.3.0'
-source ''
+source 'https://github.com/aboe76/puppet-pacman'
 author 'aboe'
 license 'Apache License, Version 2.0'
 summary 'This module will configure pacman package manager on Archlinux'
 description ''
-project_page ''
+project_page 'https://github.com/aboe76/puppet-pacman'
 
 ## Add dependencies, if any:
 # dependency 'username/name', '>= 1.2.0'
