@@ -5,7 +5,7 @@ class pacman::params {
     'Archlinux' : {
       $package_ensure = 'present'
       $package_name = ['pacman']
-      $config = '/etc/pacman.conf.test'
+      $config = '/etc/pacman.conf'
       # pacman config options
       $rootdir = '/'
       $dbpath = '/var/lib/pacman'
