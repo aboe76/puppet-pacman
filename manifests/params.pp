@@ -4,7 +4,7 @@ class pacman::params {
   case $::osfamily {
     'Archlinux' : {
       $package_ensure = 'present'
-      $package_name = ['pacman']
+      $package_name = 'pacman'
       $config = '/etc/pacman.conf'
       # pacman config options
       $rootdir = '/'
