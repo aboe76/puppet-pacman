@@ -50,6 +50,8 @@ pacman::params {
 
   anchor { 'pacman::end': }
 
-  Anchor['pacman::begin'] -> Class['::pacman::install'] -> Class['::pacman::config'
-    ] -> Anchor['pacman::end']
+  Anchor['pacman::begin'] ->
+    Class['::pacman::install'] ->
+    Class['::pacman::config'] ->
+    Anchor['pacman::end']
 }

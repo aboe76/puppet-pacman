@@ -13,7 +13,7 @@ class pacman::params {
       $logfile = '/var/log/pacman.log'
       $gpgdir = '/etc/pacman.d/gnupg/'
       $holdpkg = 'pacman glibc'
-      $xfercommand = '/usr/bin/curl -C - -f %u > %o'
+      $xfercommand = undef
       $cleanmethod = 'KeepInstalled'
       $usedelta = '0.7'
       $architecture = 'auto'
@@ -31,6 +31,7 @@ class pacman::params {
       $mainsiglevel = 'Required DatabaseOptional'
       $localfilesiglevel = 'Optional'
       $remotefilesiglevel = 'Required'
+      $default_keyserver = 'hkp://pool.sks-keyservers.net:11371'
     }
 
     default     : {

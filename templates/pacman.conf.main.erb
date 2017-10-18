@@ -29,7 +29,9 @@ HoldPkg      = <%= @holdpkg %>
 
 #XferCommand = /usr/bin/curl -C - -f %u > %o
 #XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+<% if @xfercommand -%>
 XferCommand  = <%= @xfercommand %>
+<% end -%>
 
 #CleanMethod = KeepInstalled
 CleanMethod  = <%= @cleanmethod %>
