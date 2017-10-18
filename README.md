@@ -1,7 +1,7 @@
-#puppet-pacman
+# puppet-pacman
 
 
-####Table of Contents
+#### Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
@@ -18,18 +18,18 @@
 Manage pacman configuration on archlinux
 
 
-##Module Description
+## Module Description
 
 This module can be used to configure the pacman.conf file on Archlinux
 
-##Setup
+## Setup
 
-###What pacman affects
+### What pacman affects
 
  * pacman.conf
  * pacman repositories
  
-###Beginning with pacman
+### Beginning with pacman
 
 Just add manifest:
 
@@ -45,45 +45,46 @@ class { 'pacman::repo': 'custom':
       description => "custom repo",
       siglevel => 'never',
       server => 'http://custom.example.com/$arch',
-      order => '100',
+      order => '99',
     }
 ```
 
-##Usage
+## Usage
 
 All interaction with the pacman module can be done through
 the main pacman class. except for adding extra repositories
 
-###I just want the default pacman.conf, what's the minimum I need?
+### I just want the default pacman.conf, what's the minimum I need?
 
 ```puppet
 include '::pacman'
 ```
 
-###I just want a pacman configuration with archlinux testing repo?
+### I just want a pacman configuration with archlinux testing repo?
 
-Testing repo needs to be above all other repo's
-the default repo's start with order number 10
-so everything below is ok.
+Testing repo needs to be above all other repos.
+
+The default repos start with order number 10 so everything below is ok.
 
 ```puppet
 include '::pacman'
 class 'pacman::repo': 'testing':
   include => '/etc/pacman.d/mirrorlist',
-  order => 09
+  order => '09'
 ```
 
-###I just want a pacman configuration with a custom repo?
+### I just want a pacman configuration with a custom repo?
 
-Custom repo's needs to be below all other repo's
-Custom repo's start with order number 100
+Custom repos needs to be below all other repos.
+
+For that reason. custom repos use order number 99.
 
 ```puppet
 include '::pacman'
 class 'pacman::repo': 'custom':
   siglevel = 'never',
   server => 'http://custom.example.com/$arch',
-  order => 99
+  order => '99'
 ```
 
 ### My custom repository has a signing key that needs to be added
@@ -108,16 +109,16 @@ pacman::key { 'mykey':
 ```
 
 
-##Reference
+## Reference
 
-###Classes
- * pacman: Main class, includes all the rest.
- * pacman::repo: Handles the repositories.
- * pacman::config: Handles the pacman configuration
- * pacman::params: all parameters needed for the rest.
+### Classes
+ * `pacman`: Main class, includes all the rest.
+ * `pacman::repo`: Handles the repositories.
+ * `pacman::config`: Handles the pacman configuration
+ * `pacman::params`: all parameters needed for the rest.
 
 
-##Limitations
+## Limitations
 
-This module has been built on and tested against Puppet 3.6.0 and higher.
+This module has been built on and tested against Puppet 5.1.0 and higher.
 This module works only on archlinux
