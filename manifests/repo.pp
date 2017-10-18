@@ -6,7 +6,7 @@ define pacman::repo (
   $include     = undef,
   $description = undef,
   $siglevel    = undef,
-  $order       = '100',
+  $order       = '99',
   # Needed for testing primarily, support for multiple files is not really
   # working.
   $target      = $pacman::config::config) {

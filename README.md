@@ -83,7 +83,28 @@ include '::pacman'
 class 'pacman::repo': 'custom':
   siglevel = 'never',
   server => 'http://custom.example.com/$arch',
-  order => 100
+  order => 99
+```
+
+### My custom repository has a signing key that needs to be added
+
+```puppet
+# Fetch the key from pool.sks-keyservers.net using hkp
+pacman::key { 'mykey':
+	keyid => '0x0123456789ABCDEF0123456789ABCDEF012345678',
+}
+
+# Fetch the key from a URL on the web using curl
+pacman::key { 'mykey':
+	keyid => '0x0123456789ABCDEF0123456789ABCDEF012345678',
+	url   => 'http://www.example.com/my-pgp-key.asc',
+}
+
+# Fetch the key from a local file or puppet
+pacman::key { 'mykey':
+	keyid  => '0x0123456789ABCDEF0123456789ABCDEF012345678',
+	source => "puppet:///modules/$module_name/pgp/my-pgp-key.asc",
+}
 ```
 
 
