@@ -1,40 +1,22 @@
 {
+  "name": "aboe-pacman",
+  "version": "0.6.0",
   "author": "aboe",
-  "checksums": {
-    "Modulefile": "fb4c13fdc31f0dc8525684e1da3019a8",
-    "README.markdown": "966e0a2d431f3b21b8f9b5e154fe834e",
-    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "manifests/config.pp": "7ff77345d7ae2998cc85c69737f70eb3",
-    "manifests/init.pp": "e1721040e7a561a07e937860fbc60257",
-    "manifests/install.pp": "71eeaae15c0ef820d7095b53a64ae345",
-    "manifests/params.pp": "c544220c8c25ed37b647e4e9d18aa94f",
-    "manifests/repo.pp": "433148a89e7f1d2835ae374a250fb9e9",
-    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
-    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
-    "templates/pacman.conf.customrepo.erb": "9a042f3af850c0a9f4b2b26e107dea17",
-    "templates/pacman.conf.main.erb": "b218eaa4aefabfc0a5c93c0593a8321d",
-    "templates/pacman.conf.repo.erb": "70ec9e2129fedb69f145385b043b15cf",
-    "tests/init.pp": "20f4fd9f24febbbb4be471755905b15f"
-  },
+  "summary": "This module will configure pacman package manager on Archlinux",
+  "license": "Apache-2.0",
+  "source": "https://github.com/aboe76/puppet-pacman",
+  "project_page": "https://github.com/aboe76/puppet-pacman",
+  "issues_url": "https://github.com/aboe76/puppet-pacman/issues",
   "dependencies": [
-    {"version_requirement":">= 2.2.1","name":"puppetlabs-stdlib"},
-    {"version_requirement":">= 4.1.0","name":"puppetlabs-stdlib"},
+    { "name":"puppetlabs/stdlib","version_requirement":">= 4.13.1 < 5.0.0" },
+    {"version_requirement":">= 1.0.0","name":"puppetlabs-concat"}
+  ],
+  "data_provider": "hiera",
+  "requirements": [
     {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": "4.1.0"
-    },
-    {"version_requirement":">= 1.0.0","name":"puppetlabs-concat"},
-    {
-      "name": "puppetlabs/concat",
-      "version_requirement": "1.0.0"
+      "name": "puppet",
+      "version_requirement": ">= 4.5.0 < 5.0.0"
     }
   ],
-  "description": "",
-  "license": "Apache License, Version 2.0",
-  "name": "aboe-pacman",
-  "project_page": "https://github.com/aboe76/puppet-pacman",
-  "source": "https://github.com/aboe76/puppet-pacman",
-  "summary": "This module will configure pacman package manager on Archlinux",
-  "types": [],
-  "version": "0.5.0"
+  "description": "This module will confiugre pacman package manager on Archlinux"
 }
