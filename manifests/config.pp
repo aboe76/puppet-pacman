@@ -24,7 +24,6 @@ class pacman::config (
   $holdpkg            = $pacman::holdpkg,
   $xfercommand        = $pacman::xfercommand,
   $cleanmethod        = $pacman::cleanmethod,
-  $usedelta           = $pacman::usedelta,
   $architecture       = $pacman::architecture,
   # pacman package options
   $ignorepkg          = $pacman::ignorepkg,
