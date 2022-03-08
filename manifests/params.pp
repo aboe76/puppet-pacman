@@ -27,6 +27,7 @@ class pacman::params {
       $totaldownload = false
       $checkspace = true
       $verbosepkglist = false
+      $paralleldownloads = undef
       # pacman sec options
       $mainsiglevel = 'Required DatabaseOptional'
       $localfilesiglevel = 'Optional'

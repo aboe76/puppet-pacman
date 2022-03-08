@@ -38,6 +38,7 @@ class pacman (
   $totaldownload      = $pacman::params::totaldownload,
   $checkspace         = $pacman::params::checkspace,
   $verbosepkglist     = $pacman::params::verbosepkglist,
+  $paralleldownloads  = $pacman::params::paralleldownloads,
   # pacman sec options
   $mainsiglevel       = $pacman::params::mainsiglevel,
   $localfilesiglevel  = $pacman::params::localfilesiglevel,
