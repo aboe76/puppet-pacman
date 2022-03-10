@@ -36,9 +36,6 @@ XferCommand  = <%= @xfercommand %>
 #CleanMethod = KeepInstalled
 CleanMethod  = <%= @cleanmethod %>
 
-#UseDelta    = 0.7
-UseDelta     = <%= @usedelta %>
-
 #Architecture = auto
 Architecture  = <%= @architecture %>
 
@@ -69,6 +66,10 @@ CheckSpace
 #VerbosePkgLists
 <% if @verbosepkglist -%>
 VerbosePkgLists
+<% end -%>
+#ParallelDownloads = 5
+<% if @paralleldownloads %>
+ParallelDownloads = <%= @paralleldownloads %>
 <% end -%>
 
 # By default, pacman accepts packages signed by keys that its local keyring

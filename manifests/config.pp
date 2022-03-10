@@ -24,7 +24,6 @@ class pacman::config (
   $holdpkg            = $pacman::holdpkg,
   $xfercommand        = $pacman::xfercommand,
   $cleanmethod        = $pacman::cleanmethod,
-  $usedelta           = $pacman::usedelta,
   $architecture       = $pacman::architecture,
   # pacman package options
   $ignorepkg          = $pacman::ignorepkg,
@@ -36,6 +35,7 @@ class pacman::config (
   $totaldownload      = $pacman::totaldownload,
   $checkspace         = $pacman::checkspace,
   $verbosepkglist     = $pacman::verbosepkglist,
+  $paralleldownloads  = $pacman::paralleldownloads,
   # pacman sec options
   $mainsiglevel       = $pacman::mainsiglevel,
   $localfilesiglevel  = $pacman::localfilesiglevel,

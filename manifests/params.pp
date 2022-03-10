@@ -15,7 +15,6 @@ class pacman::params {
       $holdpkg = 'pacman glibc'
       $xfercommand = undef
       $cleanmethod = 'KeepInstalled'
-      $usedelta = '0.7'
       $architecture = 'auto'
       # pacman package options
       $ignorepkg = undef
@@ -27,6 +26,7 @@ class pacman::params {
       $totaldownload = false
       $checkspace = true
       $verbosepkglist = false
+      $paralleldownloads = undef
       # pacman sec options
       $mainsiglevel = 'Required DatabaseOptional'
       $localfilesiglevel = 'Optional'
